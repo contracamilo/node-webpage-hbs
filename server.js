@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const hbs = require('hbs');
+const port = process.env.PORT || 4200;
 require('./hbs/helpers');
 
 app.use(express.static( __dirname + '/public'));
@@ -28,6 +29,6 @@ app.get('/data', (req, res) => {
    res.send('hello') 
 });
 
-app.listen(4200, () => {
-    console.log('listen on port 4200')   
+app.listen(port, () => {
+    console.log(`listen on port ${port}`)   
 });
